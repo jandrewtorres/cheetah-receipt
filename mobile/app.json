@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Cheetah Receipts",
+    "slug": "cheetah-receipts",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#070c16"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.cheetahreceipts.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Take photos of your receipts to list them on the marketplace.",
+        "NSPhotoLibraryUsageDescription": "Upload receipt photos from your photo library."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#070c16"
+      },
+      "package": "com.cheetahreceipts.app",
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE"]
+    },
+    "extra": {
+      "eas": { "projectId": "YOUR_EAS_PROJECT_ID" }
+    },
+    "plugins": [
+      ["expo-camera", { "cameraPermission": "Allow Cheetah to access your camera to photograph receipts." }],
+      ["expo-notifications", { "icon": "./assets/notification-icon.png", "color": "#f59e0b" }]
+    ],
+    "scheme": "cheetah"
+  }
+}

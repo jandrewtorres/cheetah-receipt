@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-dm-sans: 'DM Sans', system-ui, sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #070c16;
+  color: #f1f5f9;
+  font-family: var(--font-dm-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #111827; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Selection */
+::selection { background: #f59e0b33; color: #f59e0b; }
+
+/* Focus ring */
+*:focus-visible { outline: 2px solid #f59e0b; outline-offset: 2px; border-radius: 4px; }
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-gradient-to-r from-brand-500 to-brand-600 text-black font-bold
+           rounded-xl px-6 py-3 transition-all duration-150 cursor-pointer
+           hover:brightness-110 hover:-translate-y-px active:translate-y-0
+           disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none;
+  }
+  .btn-secondary {
+    @apply bg-surface-600 border border-surface-500 text-white font-semibold
+           rounded-xl px-6 py-3 transition-all duration-150 cursor-pointer
+           hover:bg-surface-500 hover:border-surface-400
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply bg-transparent border border-surface-500 text-surface-100 font-semibold
+           rounded-xl px-6 py-3 transition-all duration-150 cursor-pointer
+           hover:bg-surface-600 hover:text-white
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-danger {
+    @apply bg-red-900/40 border border-red-500/30 text-red-400 font-semibold
+           rounded-xl px-6 py-3 transition-all duration-150 cursor-pointer
+           hover:bg-red-900/60;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full bg-surface-600 border border-surface-500 rounded-xl
+           px-4 py-3 text-white placeholder:text-surface-200
+           focus:outline-none focus:border-brand-500/60 focus:ring-1 focus:ring-brand-500/30
+           transition-colors duration-150;
+  }
+  .input-label {
+    @apply block text-surface-200 text-xs font-semibold uppercase tracking-wider mb-2;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-surface-700 border border-surface-500 rounded-2xl;
+  }
+  .card-hover {
+    @apply card transition-all duration-200
+           hover:border-brand-500/30 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/30;
+  }
+
+  /* Badges */
+  .badge { @apply text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wide; }
+  .badge-gold  { @apply badge bg-brand-500/20 text-brand-500; }
+  .badge-green { @apply badge bg-green-500/20 text-green-400; }
+  .badge-red   { @apply badge bg-red-500/20 text-red-400; }
+  .badge-blue  { @apply badge bg-blue-500/20 text-blue-400; }
+  .badge-gray  { @apply badge bg-surface-500/50 text-surface-100; }
+
+  /* Page container */
+  .page-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  /* Section header */
+  .section-title { @apply text-2xl font-black text-white tracking-tight; }
+
+  /* Stat card */
+  .stat-card {
+    @apply card p-5 flex flex-col gap-1;
+  }
+  .stat-value { @apply text-3xl font-black text-white; }
+  .stat-label { @apply text-surface-200 text-sm; }
+
+  /* Table */
+  .table-header { @apply text-xs font-bold text-surface-200 uppercase tracking-wider; }
+  .table-row    { @apply border-t border-surface-600 hover:bg-surface-600/50 transition-colors; }
+}
+
+/* Scan animation */
+@keyframes scanLine {
+  0%   { top: 10%; }
+  100% { top: 90%; }
+}
+.scan-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+  animation: scanLine 1.4s ease-in-out infinite alternate;
+  box-shadow: 0 0 12px #f59e0b88;
+}
+
+/* Progress bar */
+@keyframes progressPulse {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0.7; }
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

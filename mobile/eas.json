@@ -1,0 +1,24 @@
+{
+  "cli": { "version": ">= 5.9.0" },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "ios":     { "simulator": false },
+      "android": { "buildType": "apk" }
+    },
+    "production": {
+      "ios":     { "autoIncrement": true },
+      "android": { "autoIncrement": true, "buildType": "app-bundle" }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios":     { "appleId": "your@apple.com", "ascAppId": "YOUR_APP_STORE_APP_ID", "appleTeamId": "YOUR_TEAM_ID" },
+      "android": { "serviceAccountKeyPath": "./google-service-account.json", "track": "production" }
+    }
+  }
+}

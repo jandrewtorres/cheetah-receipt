@@ -1,0 +1,42 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - npm run build
+    postBuild:
+      commands:
+        - echo "Build complete"
+  artifacts:
+    baseDirectory: .next
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
+
+  customHeaders:
+    - pattern: "**/*"
+      headers:
+        - key: X-Frame-Options
+          value: DENY
+        - key: X-XSS-Protection
+          value: "1; mode=block"
+        - key: X-Content-Type-Options
+          value: nosniff
+        - key: Referrer-Policy
+          value: strict-origin-when-cross-origin
+        - key: Permissions-Policy
+          value: "camera=(), microphone=(), geolocation=()"
+    - pattern: "/api/**"
+      headers:
+        - key: Cache-Control
+          value: "no-store, max-age=0"
+    - pattern: "/_next/static/**"
+      headers:
+        - key: Cache-Control
+          value: "public, max-age=31536000, immutable"

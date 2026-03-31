@@ -1,0 +1,8 @@
+{
+  "track_id": "production_readiness_20260331",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-03-31T12:00:00Z",
+  "updated_at": "2026-03-31T12:00:00Z",
+  "description": "Production Readiness: Sanitize logs, remove dead code, and improve error handling across Web and Mobile."
+}
