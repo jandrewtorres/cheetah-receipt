@@ -8,7 +8,7 @@ This phase focuses on integrating **Pino** into both the Next.js and React Nativ
     - [x] Install `pino` and `pino-pretty` (for development).
     - [x] Implement `src/lib/logger.ts` to export a Pino instance configured for JSON output in production and pretty-printing in development (Green Phase).
     - [x] Ensure sensitive fields (e.g., "password", "token") are redacted via Pino's built-in redaction (Refactor Phase).
-- [ ] **Task: Setup Structured Logging in React Native**
+- [~] **Task: Setup Structured Logging in React Native**
     - [ ] Create unit tests for the mobile logger in `mobile/src/services/logger.ts` (Red Phase).
     - [ ] Install `pino` and necessary polyfills (e.g., `fast-redaction`) in the `mobile/` directory.
     - [ ] Implement `mobile/src/services/logger.ts` with a React Native-compatible Pino configuration (Green Phase).
