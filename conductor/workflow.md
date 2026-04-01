@@ -150,27 +150,33 @@ Before marking any task complete, verify:
 
 ## Development Commands
 
-**AI AGENT INSTRUCTION: This section should be adapted to the project's specific language, framework, and build tools.**
-
 ### Setup
 ```bash
-# Example: Commands to set up the development environment (e.g., install dependencies, configure database)
-# e.g., for a Node.js project: npm install
-# e.g., for a Go project: go mod tidy
+# Install root (web) dependencies
+npm install
+
+# Install mobile dependencies
+cd mobile && npm install && cd ..
 ```
 
 ### Daily Development
 ```bash
-# Example: Commands for common daily tasks (e.g., start dev server, run tests, lint, format)
-# e.g., for a Node.js project: npm run dev, npm test, npm run lint
-# e.g., for a Go project: go run main.go, go test ./..., go fmt ./...
+# Start Next.js development server
+npm run dev
+
+# Start mobile development (Expo)
+npm run mobile
+
+# Lint and Type-check
+npm run lint
+npm run type-check
 ```
 
 ### Before Committing
 ```bash
-# Example: Commands to run all pre-commit checks (e.g., format, lint, type check, run tests)
-# e.g., for a Node.js project: npm run check
-# e.g., for a Go project: make check (if a Makefile exists)
+# Run all checks
+npm run lint && npm run type-check
+# Note: Add 'npm test' here once a test runner is configured.
 ```
 
 ## Testing Requirements

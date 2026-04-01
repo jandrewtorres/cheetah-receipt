@@ -18,6 +18,7 @@
 - **Email**: [Resend](https://resend.com/) — Fast and reliable transactional email delivery.
 
 ## Security & Reliability
+- **Unit Testing**: [Vitest](https://vitest.dev/) — Fast and modern test runner for TypeScript and React.
 - **Fraud Detection**: Custom scoring engine implemented in TypeScript for behavior-based risk assessment.
 - **Environment Management**: Strict environment variable configuration for secure API key handling.
 

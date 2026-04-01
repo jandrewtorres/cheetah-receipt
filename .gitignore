@@ -40,3 +40,6 @@ mobile/google-service-account.json
 # Editor
 .vscode/
 .idea/
+
+# Gemini
+.gemini/

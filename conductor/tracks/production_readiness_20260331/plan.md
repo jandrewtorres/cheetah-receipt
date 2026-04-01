@@ -3,7 +3,7 @@
 ## Phase 1: Foundation (Structured Logging Integration)
 This phase focuses on integrating **Pino** into both the Next.js and React Native environments and creating a unified logging utility.
 
-- [ ] **Task: Setup Pino in Next.js (Web & API)**
+- [~] **Task: Setup Pino in Next.js (Web & API)**
     - [ ] Create unit tests for a new `Logger` utility in `src/lib/logger.ts` (Red Phase).
     - [ ] Install `pino` and `pino-pretty` (for development).
     - [ ] Implement `src/lib/logger.ts` to export a Pino instance configured for JSON output in production and pretty-printing in development (Green Phase).
